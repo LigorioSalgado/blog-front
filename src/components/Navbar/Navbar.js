@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './navbar.scss';
-
+import payload from '../../utils/payload';
 
 class Navbar extends Component {
 
@@ -13,8 +13,9 @@ class Navbar extends Component {
 				</button>
 				<div className="collapse navbar-collapse" id="navbarNavAltMarkup">
 					<div className="navbar-nav">
-						<a className="nav-item nav-link active" href="#">Home <span className="sr-only">(current)</span></a>
-						<a className="nav-item nav-link" href="#">Features</a>
+						<a href="#" className="nav-item nav-link">Hola {payload().first_name} !!!</a>
+						<a className="nav-item nav-link active" href="/">Home <span className="sr-only">(current)</span></a>
+						<a className="nav-item nav-link" href="/login">Login</a>
 						<a className="nav-item nav-link" href="#">Pricing</a>
 						<a className="nav-item nav-link disabled" href="#">Disabled</a>
 					</div>

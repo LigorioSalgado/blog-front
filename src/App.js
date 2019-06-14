@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import {BrowserRouter as Router } from 'react-router-dom'
 import './App.scss';
 import { Navbar } from './components/Navbar';
-import { Home } from './components/Home';
+import Routes from './Routes';
 //import Navbar from './components/Navbar/Navbar'
 
 class  App extends Component {
@@ -10,7 +11,9 @@ class  App extends Component {
 		return (
 			<div>
 				<Navbar/>
-				<Home/>
+				<Router>
+					<Routes/>
+				</Router>
 			</div>
 		);
 	}

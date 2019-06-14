@@ -1,19 +1,6 @@
 import React, { Component } from 'react';
 import { API } from '../../utils/http';
-
-
-const displayCards = (title) => {
-	return (
-		<div className="col-md-3">
-			<div className="card" >
-				<img className="card-img-top" src="https://picsum.photos/200/200" />
-				<div className="card-body">
-					<h5 className="card-title">{title}</h5>
-				</div>
-			</div>
-		</div>
-	)
-}
+import { Card } from '../Card';
 
 
 class Home extends Component {
@@ -39,9 +26,7 @@ class Home extends Component {
 
 	render() {
 		const {posts,isLoading} =  this.state
-		const cardPost = posts.map((post) => {
-			return displayCards(post.title);
-		})
+		const cardPost = posts.map((post,index) => <Card title={post.title} key={index}/> )
 		return (
 			<div className="container">
 				<h2>Post recientes</h2>

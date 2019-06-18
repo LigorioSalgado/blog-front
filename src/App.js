@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import {BrowserRouter as Router } from 'react-router-dom'
 import './App.scss';
+import ROUTES from './Routes';
 import { Navbar } from './components/Navbar';
-import Routes from './Routes';
 //import Navbar from './components/Navbar/Navbar'
 
 class  App extends Component {
@@ -10,9 +10,11 @@ class  App extends Component {
 	render(){
 		return (
 			<div>
-				<Navbar/>
 				<Router>
-					<Routes/>
+					<>
+						<Navbar />
+						{ROUTES}
+					</>
 				</Router>
 			</div>
 		);

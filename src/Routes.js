@@ -1,18 +1,30 @@
-import React , {Component} from 'react';
-import { Route, Switch} from 'react-router-dom';
+import React from 'react';
+import { Route, Redirect } from 'react-router-dom';
 import { Home } from './components/Home';
 import { Login } from './components/Login';
-class Routes extends Component{
+import { FormPost } from './components/FormPost'
+import isAuthenticathed from './utils/isAuthenticathed';
 
 
-	render(){
-		return(
-			<Switch>
-				<Route exact path="/" component={Home}/>
-				<Route exact path="/login" component={Login}/>
-			</Switch>
+const Logout = () => {
+	localStorage.removeItem('blogToken');
+	return <Redirect to="/" />
+}
+
+const PrivateRoute = ({ component: Component, ...rest }) => (
+	<Route {...rest} render={
+		(props) => (
+			isAuthenticathed() ? <Component {...props} /> : <Redirect to="/" />
 		)
 	}
+	/>
+)
 
-}
-export default Routes;
+const ROUTES = [
+	<Route exact path="/" component={Home} key={1} />,
+	<Route exact path="/login" component={Login} key={2} />,
+	<PrivateRoute exact path="/logout" component={Logout} key={3} />,
+	<PrivateRoute exact path="/post/add" component={FormPost} key={4} /> 
+]
+
+export default ROUTES;

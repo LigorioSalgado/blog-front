@@ -26,7 +26,7 @@ class Home extends Component {
 
 	render() {
 		const {posts,isLoading} =  this.state
-		const cardPost = posts.map((post,index) => <Card title={post.title} key={index}/> )
+		const cardPost = posts.map((post,index) => <Card title={post.title} image={post.image} key={index}/> )
 		return (
 			<div className="container">
 				<h2>Post recientes</h2>

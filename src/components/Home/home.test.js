@@ -5,7 +5,7 @@ import { Home } from '../Home';
 
 
 
-describe("<Card/>", () => {
+describe("<Home/>", () => {
 
 	it("Debe ejecutar render correctamente", () => {
 		const component = shallow(<Home />)

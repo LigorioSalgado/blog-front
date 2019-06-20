@@ -9,7 +9,7 @@ class Card extends Component{
 			<div className="card" >
 				<img className="card-img-top" src={this.props.image} />
 				<div className="card-body">
-					<h5 className="card-title">{this.props.title}</h5>
+					<h4 className="card-title">{this.props.title}</h4>
 				</div>
 			</div>
 		</div>

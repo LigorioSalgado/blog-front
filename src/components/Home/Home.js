@@ -29,7 +29,8 @@ class Home extends Component {
 		const cardPost = posts.map((post,index) => <Card title={post.title} image={post.image} key={index}/> )
 		return (
 			<div className="container">
-				<h2>Post recientes</h2>
+				<h1>Post recientes</h1>
+				<div></div>
 				<div className="row mt-4">
 					{
 						(isLoading) ? (<h3>Cargando...</h3>) : (cardPost)	

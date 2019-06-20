@@ -24,7 +24,7 @@ describe("<Card/>", () => {
                 image={post.image}
              />)
         
-        expect(component.find(".card-title").text()).toBe(post.title);
+		expect(component.find(".card-title").text()).toBe(post.title);
    })
 
 })
